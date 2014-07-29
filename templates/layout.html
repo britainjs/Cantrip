@@ -8,10 +8,11 @@
         Enter a word to receive a list of anagrams (really more like permutations 
         at this point). Pending stress testing input size is limited to 6 characters.
     </p>
-    <form>
+    <form method=post>
         <input type="text" name="input_word">
         <input type="submit" value="Submit">
     </form>
+    {% if error %} <p class=error><strong>Error:</strong> {{ error}}{% endif %}
     <ul>
     {% for combo in anagrams %}
         <li><h2>{{combo}}</h2>
